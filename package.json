@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.13.3",
+    "chalk": "^1.1.0",
     "express": "^4.13.3",
     "mysql": "^2.8.0",
     "sequelize": "^3.5.1",

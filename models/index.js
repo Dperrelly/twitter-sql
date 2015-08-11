@@ -29,9 +29,5 @@ twitterjsDB
     Tweet: Tweet
 };
 
-User.findOne().then(function (user) {
-    return user.getTweets();
-})
-.then(function (tweets) {
-    JSON.stringify(tweets); // another way of just logging the plain old values
-});
+
+
