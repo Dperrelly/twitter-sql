@@ -9,7 +9,7 @@ var icon = 'https://cdn4.iconfinder.com/data/icons/iconset-addictive-flavour/png
 
 var add = function (name, text) {
   db.User.findOne({ where: {name: name} }).then(function(user) {
-    if (!user) db.User.create({ name: name, pictureUrl: })
+    if (!user) db.User.create({ name: name, pictureUrl: icon})
       .then(function(newUser){
         db.Tweet.create({ UserId: newUser.id, tweet: text});
   });
