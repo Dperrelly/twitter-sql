@@ -39,13 +39,15 @@ setTimeout(function(){
 }, 4000);
 
 var find = function (properties) {
-  return db.Tweet.findAll({ include: [ db.User ], where: properties}).then(function(tweets){
+  return db.User.findAll({ where: properties, include: [ db.Tweet ] }).then(function(users){
     var array = [];
-    tweets.forEach(function(tweet){
-      array.push({
-        name: tweet.User.name,
-        text: tweet.tweet,
-        id: tweet.id
+    users.forEach(function(user){
+      user.Tweets.forEach(function(tweet){
+        array.push({
+          name: user.name,
+          text: tweet.tweet,
+          id: tweet.id
+        });
       });
 
     });
